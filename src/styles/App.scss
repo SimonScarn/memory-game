@@ -1,0 +1,28 @@
+:root {
+    --container-bg-color: #458da1;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.container {
+    width: 470px;
+    background-color: var(--container-bg-color);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+
+    @media (max-width: 767px) {
+        width: auto;
+        padding: 24px;
+    }
+}
+
+.header {
+    font-weight: 700;
+    text-align: center;
+}
