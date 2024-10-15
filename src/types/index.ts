@@ -1,3 +1,6 @@
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+
+
 export interface GameState {
   tiles: Tile[];
   revealedTiles: number[]; 
@@ -73,5 +76,14 @@ export interface GameBoardButtonsProps {
   resetGame: () => void;
 }
 
+export interface GameBoardDifficultyProps {
+  selectedDifficulty: string;
+  handleDifficultyChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+}
 
-
+export interface ButtonProps {
+  onClick: () => void;
+  label: string;
+  icon: IconDefinition;
+  className?: string;
+}

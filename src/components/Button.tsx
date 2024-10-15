@@ -1,13 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-
-interface ButtonProps {
-  onClick: () => void;
-  label: string;
-  icon: IconDefinition;
-  className?: string;
-}
+import { ButtonProps } from '../types';
 
 const Button: React.FC<ButtonProps> = ({ onClick, label, icon, className = '' }) => {
   return (

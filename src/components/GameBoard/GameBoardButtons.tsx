@@ -3,7 +3,6 @@ import Button from '../Button';
 import { faPlay, faRedo } from '@fortawesome/free-solid-svg-icons';
 import { GameBoardButtonsProps } from '../../types';
 
-
 const GameBoardButtons: React.FC<GameBoardButtonsProps> = ({ gameStarted, startGame, resetGame }) => {
   return (
     <div className="game-board__buttons">

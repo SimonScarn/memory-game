@@ -39,6 +39,7 @@ const useStore = create<GameState>((set, get) => {
         setTimeout(checkMatch, 1000);
       }
     },
+    
     checkMatch: () => {
       const { tiles, revealedTiles, matchedPairs, handleWin } = get();
       if (revealedTiles.length !== 2) return;
@@ -62,15 +63,18 @@ const useStore = create<GameState>((set, get) => {
       }
       set({ revealedTiles: [] });
     },
+
     updateSelectedIcons: (icons: string[]) => {
       set({ selectedIcons: icons });
     },
+
     handleRandomize: () => {
       const { updateSelectedIcons, difficulty } = get();
       const pairsNumber = getDifficultyNumber(difficulty);
       const randomIcons = getRandomIcons(pairsNumber / 2);
       updateSelectedIcons(randomIcons);
     },
+
     resetGame: () => {
       const { stopTimer } = get();
       stopTimer();
@@ -79,9 +83,9 @@ const useStore = create<GameState>((set, get) => {
         revealedTiles: [],
         gameStarted: false,
         matchedPairs: 0,
-        timer: 0,
       });
     },
+
     handleWin: () => {
       const { stopTimer, resetGame, addGameToHistory } = get();
       stopTimer();
@@ -93,6 +97,7 @@ const useStore = create<GameState>((set, get) => {
         set({ isLoading: false });
       }, 2000);
     },
+
     startGame: () => {
       const { resetGame, startTimer, handleRandomize, selectedIcons, difficulty } = get();
       resetGame();
@@ -117,11 +122,13 @@ const useStore = create<GameState>((set, get) => {
       });
       startTimer();
     },
+
     setDifficulty: (difficulty: Difficulty) => {
       const { resetGame } = get();
       set({ difficulty, selectedIcons: [] });
       resetGame();
     },
+
     startTimer: () => {
       const { timerInterval } = get();
 
@@ -132,6 +139,7 @@ const useStore = create<GameState>((set, get) => {
         set({ timerInterval: interval });
       }
     },
+
     stopTimer: () => {
       const { timerInterval } = get();
       if (timerInterval) {
@@ -139,6 +147,7 @@ const useStore = create<GameState>((set, get) => {
         set({ timerInterval: null });
       }
     },
+
     addGameToHistory: () => {
       const { attempts, timer, gameHistory } = get();
       const formattedDate = formatDate(new Date());

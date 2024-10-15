@@ -1,9 +1,5 @@
 import React from 'react';
-
-interface GameBoardDifficultyProps {
-  selectedDifficulty: string;
-  handleDifficultyChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-}
+import { GameBoardDifficultyProps } from '../../types';
 
 const GameBoardDifficulty: React.FC<GameBoardDifficultyProps> = ({
   selectedDifficulty,
@@ -11,7 +7,7 @@ const GameBoardDifficulty: React.FC<GameBoardDifficultyProps> = ({
 }) => {
   return (
     <div className="game-board__difficulty">
-      <label htmlFor="difficulty">Choose Difficulty: </label>
+      <label htmlFor="difficulty">Choose difficulty: </label>
       <select
         className="select-difficulty"
         id="difficulty"

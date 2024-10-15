@@ -29,7 +29,7 @@ const IconSelector: React.FC<IconSelectorProps> = ({
 
   return (
     <div className="icon-selector">
-      <h3>Select Your Icons</h3>
+      <h3>Select icons</h3>
       <Button 
         onClick={handleRandomize}
         label="Randomize"
